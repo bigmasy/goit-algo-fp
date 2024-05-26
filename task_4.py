@@ -1,3 +1,4 @@
+import heapq
 import uuid
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -37,6 +38,7 @@ def draw_tree(tree_root):
     plt.show()
 
 def build_heap(arr):
+    heapq.heapify(arr)
     nodes = [Node(val) for val in arr]
     for i in range(len(nodes) // 2):
         if 2 * i + 1 < len(nodes):
